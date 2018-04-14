@@ -6,12 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "log",
-    "register",
-    "list"
-  ],
+  "keywords": ["log", "register", "list"],
   "author": "Pablo Corso",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {}
 }
