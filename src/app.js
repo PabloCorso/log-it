@@ -39,6 +39,11 @@ function createLogItemContainer(logItem) {
 }
 
 function setLogItemContent(container, logItem) {
+  const header = document.createElement("span");
+  header.innerText = logItem.name;
+  header.className = "log-item-header";
+  container.appendChild(header);
+
   const img = document.createElement("img");
   img.src = logItem.image;
   container.appendChild(img);
