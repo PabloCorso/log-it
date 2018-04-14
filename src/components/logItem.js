@@ -34,15 +34,15 @@ function getOneUpElement() {
   const oneUp = document.createElement("span");
   oneUp.innerHTML = "+1";
   oneUp.className = "one-up";
-  hideElementAfterAnimation(oneUp);
+  removeElementAfterAnimation(oneUp);
   return oneUp;
 }
 
-function hideElementAfterAnimation(element) {
+function removeElementAfterAnimation(element) {
   element.addEventListener(
     "webkitAnimationEnd",
     event => {
-      element.style.display = "none";
+      element.parentNode.removeChild(element);
     },
     false
   );
