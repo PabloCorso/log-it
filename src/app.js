@@ -1,8 +1,8 @@
 import api from "./api/index.js";
-import { LogItem } from "./components/index.js";
+import { LogItem, Spinner } from "./components/index.js";
 const { bind, wire } = hyperHTML;
 
-window.addEventListener("load", event => {
+window.addEventListener("load", async event => {
   registerServiceWorker();
   initLogItems();
 });
@@ -19,7 +19,11 @@ function registerServiceWorker() {
 }
 
 function initLogItems() {
-  const logItems = api.getLogItems();
   const main = document.querySelector("main");
-  bind(main)`${logItems.map(logItem => new LogItem(logItem))}`;
+  bind(main)`${{
+    any: api
+      .getLogItems()
+      .then(logItems => logItems.map(logItem => new LogItem(logItem))),
+    placeholder: new Spinner()
+  }}`;
 }
