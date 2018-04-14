@@ -1,6 +1,7 @@
 import api from "./api/index.js";
-import { createLogItemElement } from "./components/index.js";
+import { LogItem } from "./components/index.js";
 
+const { bind, wire } = hyperHTML;
 const logItems = api.getLogItems();
 
 window.addEventListener("load", event => {
@@ -20,15 +21,6 @@ function registerServiceWorker() {
 }
 
 function initLogItems() {
-  logItems.forEach(initLogItem);
-}
-
-function initLogItem(logItem) {
-  const element = createLogItemElement(logItem);
-  displayLogItem(element);
-}
-
-function displayLogItem(element) {
   const main = document.querySelector("main");
-  main.appendChild(element);
+  bind(main)`${logItems.map(logItem => LogItem(logItem))}`;
 }

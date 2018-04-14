@@ -1,2 +1,2 @@
-import { createLogItemElement } from "./logItem.js";
-export { createLogItemElement };
+import { LogItem } from "./logItem.js";
+export { LogItem };

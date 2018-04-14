@@ -1,35 +1,33 @@
-function createLogItemElement(logItem) {
-  const container = createLogItemContainer(logItem);
-  setLogItemContent(container, logItem);
+const { wire } = hyperHTML;
 
-  return container;
+function LogItem(logItem) {
+  const containerId = getContainerId(logItem.id);
+  return wire(logItem)`
+			<div class=log-item id="${containerId}"
+				onclick="${() => onClickLogItem(logItem.id)}">
+				<span class=log-item-header>${logItem.name}</span>
+				<img src="${logItem.image}"></img>
+			</div>
+		`;
 }
 
-function createLogItemContainer(logItem) {
-  const div = document.createElement("div");
-  div.id = `log-item-${logItem.id}`;
-  div.className = "log-item";
-  div.addEventListener("click", event => {
-    onClickItemContainer(div);
-  });
-  return div;
+function getContainerId(logItemId) {
+  return "log-item-" + logItemId;
 }
 
-function setLogItemContent(container, logItem) {
-  const header = document.createElement("span");
-  header.innerText = logItem.name;
-  header.className = "log-item-header";
-  container.appendChild(header);
-
-  const img = document.createElement("img");
-  img.src = logItem.image;
-  container.appendChild(img);
+function onClickLogItem(logItemId) {
+  showOneUpAnimation(logItemId);
 }
 
-function onClickItemContainer(container) {
+function showOneUpAnimation(logItemId) {
+  const container = getLogItemContainer(logItemId);
   const oneUp = getOneUpElement();
-  window.getComputedStyle(container);
   container.appendChild(oneUp);
+}
+
+function getLogItemContainer(logItemId) {
+  var containerId = getContainerId(logItemId);
+  return document.querySelector(`#${containerId}`);
 }
 
 function getOneUpElement() {
@@ -50,4 +48,4 @@ function hideElementAfterAnimation(element) {
   );
 }
 
-export { createLogItemElement };
+export { LogItem };
