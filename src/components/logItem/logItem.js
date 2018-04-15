@@ -3,11 +3,12 @@ const { wire } = hyperHTML;
 
 function LogItem({ id, name, image }) {
   const containerId = getContainerId(id);
+  const imageSrc = `./images/items/${image}`;
   return wire({ id })`
 			<div class=log-item id="${containerId}"
 				onclick="${() => onClickLogItem(id)}">
 				<span class=log-item-header>${name}</span>
-				<img src="${image}"></img>
+				<img src="${imageSrc}"></img>
 			</div>
 		`;
 }

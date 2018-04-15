@@ -3,22 +3,22 @@ export default {
     {
       id: 0,
       name: "Beer",
-      image: "src/images/items/pint.svg"
+      image: "pint.svg"
     },
     {
       id: 1,
       name: "Water",
-      image: "src/images/items/glass.svg"
+      image: "glass.svg"
     },
     {
       id: 2,
       name: "Coffee",
-      image: "src/images/items/coffee.svg"
+      image: "coffee.svg"
     },
     {
       id: 3,
       name: "Hug",
-      image: "src/images/items/snuggle.svg"
+      image: "snuggle.svg"
     }
   ]
 };

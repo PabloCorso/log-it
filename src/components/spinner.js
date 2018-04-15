@@ -13,7 +13,7 @@ function Spinner() {
 
   return wire()`
 		<div style="${containerStyle}">
-			<img style="${imgStyle}" src="src//images/spinner.svg" />
+			<img style="${imgStyle}" src="./images/spinner.svg" />
 		</div>
 	`;
 }

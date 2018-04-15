@@ -1,4 +1,4 @@
-const staticAssets = ["./", "index.html", "./styles.css", "./app.js"];
+const staticAssets = ["./", "./index.html", "./styles.css", "./app.js"];
 
 self.addEventListener("install", async event => {
   const cache = await caches.open("log-it-static");
