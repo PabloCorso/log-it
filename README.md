@@ -4,9 +4,8 @@ An application to log anything you want. Created to test progressive web apps.
 Live at https://log-it-app.firebaseapp.com/ 
 
 ## Run the project
-  - clone the repo:
-    - `git clone https://github.com/PabloCorso/log-it.git`
-    - or download the .zip file
+  - clone the repo: `git clone https://github.com/PabloCorso/log-it.git`
+  - cd into the project: `cd log-it`
   - `npm install`
   - `npm start`
 
