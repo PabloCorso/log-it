@@ -35,6 +35,12 @@ header {
 header > img {
   align-self: center;
   margin-left: 20px;
+  width: 37px;
+}
+
+header > span {
+  align-self: center;
+  color: antiquewhite;
 }
 
 main {
